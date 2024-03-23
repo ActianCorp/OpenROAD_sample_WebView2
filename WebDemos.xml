@@ -212,17 +212,11 @@ subform.URL(
 ** Hard coded RGB (integer) colors, expect regular color to have been set already in BgColor via Property Inspector
 */
 on mouseenter = {
-    curexec.trace('hello '+ varchar(curframe.triggerfield.BgColor));
-
     curframe.triggerfield.BgColor = RGB(red=0, green=105, blue=217);
-
-    // TODO is there an unRGB() - believe we have something in 4gl
-    curexec.trace('hello now '+ varchar(curframe.triggerfield.BgColor));
 }
 
 on mouseexit = {
     // restore color
-    curexec.trace('bye');
     curframe.triggerfield.BgColor = RGB(red=0, green=123, blue=255);
 }
 ]]>
@@ -7162,17 +7156,11 @@ on userevent 'NAVIGATIONCOMPLETE' =
 ** Hard coded RGB (integer) colors, expect regular color to have been set already in BgColor via Property Inspector
 */
 on mouseenter = {
-    curexec.trace('hello '+ varchar(curframe.triggerfield.BgColor));
-
     curframe.triggerfield.BgColor = RGB(red=0, green=105, blue=217);
-
-    // TODO is there an unRGB() - believe we have something in 4gl
-    curexec.trace('hello now '+ varchar(curframe.triggerfield.BgColor));
 }
 
 on mouseexit = {
     // restore color
-    curexec.trace('bye');
     curframe.triggerfield.BgColor = RGB(red=0, green=123, blue=255);
 }
 ]]>
@@ -10457,17 +10445,11 @@ on userevent 'NAVIGATIONCOMPLETE' =
 ** Hard coded RGB (integer) colors, expect regular color to have been set already in BgColor via Property Inspector
 */
 on mouseenter = {
-    curexec.trace('hello '+ varchar(curframe.triggerfield.BgColor));
-
     curframe.triggerfield.BgColor = RGB(red=0, green=105, blue=217);
-
-    // TODO is there an unRGB() - believe we have something in 4gl
-    curexec.trace('hello now '+ varchar(curframe.triggerfield.BgColor));
 }
 
 on mouseexit = {
     // restore color
-    curexec.trace('bye');
     curframe.triggerfield.BgColor = RGB(red=0, green=123, blue=255);
 }
 ]]>
