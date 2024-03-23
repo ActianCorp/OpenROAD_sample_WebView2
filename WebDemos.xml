@@ -21,7 +21,7 @@
 declare
 enddeclare
 {
-    // frame.flush() is mandatory to initialize subform correctly 
+	// frame.flush() is mandatory to initialize subform correctly
 	// during initialize() block before setting attribute WebPage.
 	curframe.flush ();
 	FIELD(subform1).webpage = true;
@@ -3390,7 +3390,7 @@ declare
 
 enddeclare
 {
-    // frame.flush() is mandatory to initialize subform correctly 
+	// frame.flush() is mandatory to initialize subform correctly
 	// during initialize() block before setting attribute WebPage.
 	field(st1).curbias = FB_INVISIBLE;
 	strhtml.value = 
@@ -7034,7 +7034,7 @@ declare
 enddeclare
 {
 	furl = 'file:///' + Cursession.GetEnv (name = 'II_SYSTEM') + '/ingres/license.com.pdf';
-    // frame.flush() is mandatory to initialize subform correctly 
+	// frame.flush() is mandatory to initialize subform correctly
 	// during initialize() block before setting attribute WebPage.
 	curframe.flush ();
 	FIELD(subform1).webpage = true;
@@ -10326,7 +10326,7 @@ on click =
 declare
 enddeclare
 {
-    // frame.flush() is mandatory to initialize subform correctly 
+	// frame.flush() is mandatory to initialize subform correctly
 	// during initialize() block before setting attribute WebPage.
 	curframe.flush ();
 	FIELD(subform1).webpage = true;
@@ -13617,7 +13617,7 @@ declare
 	strHtml = stringobject;
 enddeclare
 {
-    // frame.flush() is mandatory to initialize subform correctly 
+	// frame.flush() is mandatory to initialize subform correctly
 	// during initialize() block before setting attribute WebPage.
 	curframe.flush();
 	FIELD(subform1).webpage = true;
@@ -16821,7 +16821,7 @@ on click =
 declare
 enddeclare
 {
-    // frame.flush() is mandatory to initialize subform correctly 
+	// frame.flush() is mandatory to initialize subform correctly
 	// during initialize() block before setting attribute WebPage.
 	curframe.flush();
 	FIELD(subform1).webpage = true;
@@ -20025,7 +20025,7 @@ on click =
 declare
 enddeclare
 {
-    // frame.flush() is mandatory to initialize subform correctly 
+	// frame.flush() is mandatory to initialize subform correctly
 	// during initialize() block before setting attribute WebPage.
 	curframe.flush();
 	FIELD(subform1).webpage = true;
