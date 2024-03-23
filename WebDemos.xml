@@ -10335,7 +10335,8 @@ enddeclare
 
 on click btnload =
 {
-	// This demo requires internet access
+	// This demo requires internet access and makes use of Google Charts API
+	// https://developers.google.com/chart/infographics/docs/qr_codes
 	FIELD(subform1).Url(url='https://chart.googleapis.com/chart?cht=qr&chs=320x320&chl=' + fdata /* TODO url encode */ , pageloadevent = 'NAVIGATIONCOMPLETE');
 }
 
