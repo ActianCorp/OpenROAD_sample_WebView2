@@ -13638,6 +13638,7 @@ enddeclare
 	// during initialize() block before setting attribute WebPage.
 	curframe.flush();
 
+	// https://www.weather.gov/zdc/graphical_mis# dashboards
 	FIELD(subform1).webpage = true;
 	FIELD(subform1).Url(url='https://aviationweather.gov/gfa/#obs');
 
