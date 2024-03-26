@@ -21,7 +21,7 @@
 declare
 enddeclare
 {
-	// frame.flush() is mandatory to initialize subform correctly
+    // frame.flush() is mandatory to initialize subform correctly 
 	// during initialize() block before setting attribute WebPage.
 	curframe.flush ();
 	FIELD(subform1).webpage = true;
@@ -212,11 +212,17 @@ subform.URL(
 ** Hard coded RGB (integer) colors, expect regular color to have been set already in BgColor via Property Inspector
 */
 on mouseenter = {
+    curexec.trace('hello '+ varchar(curframe.triggerfield.BgColor));
+
     curframe.triggerfield.BgColor = RGB(red=0, green=105, blue=217);
+
+    // TODO is there an unRGB() - believe we have something in 4gl
+    curexec.trace('hello now '+ varchar(curframe.triggerfield.BgColor));
 }
 
 on mouseexit = {
     // restore color
+    curexec.trace('bye');
     curframe.triggerfield.BgColor = RGB(red=0, green=123, blue=255);
 }
 ]]>
@@ -3390,7 +3396,7 @@ declare
 
 enddeclare
 {
-	// frame.flush() is mandatory to initialize subform correctly
+    // frame.flush() is mandatory to initialize subform correctly 
 	// during initialize() block before setting attribute WebPage.
 	field(st1).curbias = FB_INVISIBLE;
 	strhtml.value = 
@@ -3489,8 +3495,8 @@ on userevent 'NAVIGATIONCOMPLETE' =
 					<fgcolor>72</fgcolor>
 					<xleft>660</xleft>
 					<ytop>375</ytop>
-					<width>4382</width>
-					<height>3403</height>
+					<width>4396</width>
+					<height>3389</height>
 					<designbias>2</designbias>
 					<trimbias>8</trimbias>
 					<updatebias>16</updatebias>
@@ -3507,8 +3513,8 @@ on userevent 'NAVIGATIONCOMPLETE' =
 						<row xsi:type="stackfield">
 							<bgcolor>70</bgcolor>
 							<fgcolor>72</fgcolor>
-							<width>4382</width>
-							<height>1306</height>
+							<width>4396</width>
+							<height>1312</height>
 							<designbias>2</designbias>
 							<trimbias>8</trimbias>
 							<updatebias>16</updatebias>
@@ -3528,8 +3534,8 @@ on userevent 'NAVIGATIONCOMPLETE' =
 									<bgcolor>70</bgcolor>
 									<fgcolor>72</fgcolor>
 									<ytop>49</ytop>
-									<width>4382</width>
-									<height>569</height>
+									<width>4396</width>
+									<height>583</height>
 									<designbias>2</designbias>
 									<trimbias>16</trimbias>
 									<updatebias>256</updatebias>
@@ -3545,7 +3551,7 @@ on userevent 'NAVIGATIONCOMPLETE' =
 									<typeface>0</typeface>
 									<typesize>8</typesize>
 									<ismultiline>1</ismultiline>
-									<charsperline>75</charsperline>
+									<charsperline>70</charsperline>
 									<lines>4</lines>
 									<stringvalue>
 										<![CDATA[SIR 141439
@@ -3559,8 +3565,8 @@ on userevent 'NAVIGATIONCOMPLETE' =
 									<defaultvalue>1</defaultvalue>
 									<bgcolor>70</bgcolor>
 									<fgcolor>72</fgcolor>
-									<ytop>667</ytop>
-									<width>514</width>
+									<ytop>681</ytop>
+									<width>479</width>
 									<height>167</height>
 									<designbias>2</designbias>
 									<trimbias>16</trimbias>
@@ -3577,7 +3583,7 @@ on userevent 'NAVIGATIONCOMPLETE' =
 									<typeface>0</typeface>
 									<typesize>8</typesize>
 									<ismultiline>1</ismultiline>
-									<charsperline>8</charsperline>
+									<charsperline>7</charsperline>
 									<lines>1</lines>
 									<stringvalue>
 										<![CDATA[TO TEST]]>
@@ -3589,7 +3595,7 @@ on userevent 'NAVIGATIONCOMPLETE' =
 									<defaultvalue>1</defaultvalue>
 									<bgcolor>70</bgcolor>
 									<fgcolor>72</fgcolor>
-									<ytop>882</ytop>
+									<ytop>896</ytop>
 									<width>840</width>
 									<height>174</height>
 									<designbias>3</designbias>
@@ -3616,8 +3622,8 @@ on userevent 'NAVIGATIONCOMPLETE' =
 									<defaultvalue>1</defaultvalue>
 									<bgcolor>70</bgcolor>
 									<fgcolor>72</fgcolor>
-									<ytop>1139</ytop>
-									<width>1889</width>
+									<ytop>1146</ytop>
+									<width>1924</width>
 									<height>167</height>
 									<designbias>2</designbias>
 									<trimbias>16</trimbias>
@@ -3634,7 +3640,7 @@ on userevent 'NAVIGATIONCOMPLETE' =
 									<typeface>0</typeface>
 									<typesize>8</typesize>
 									<ismultiline>1</ismultiline>
-									<charsperline>32</charsperline>
+									<charsperline>30</charsperline>
 									<lines>1</lines>
 									<stringvalue>
 										<![CDATA[Enter some data in the field in the form]]>
@@ -3652,7 +3658,7 @@ on userevent 'NAVIGATIONCOMPLETE' =
 							<defaultvalue>1</defaultvalue>
 							<bgcolor>27</bgcolor>
 							<fgcolor>72</fgcolor>
-							<ytop>1306</ytop>
+							<ytop>1312</ytop>
 							<width>3625</width>
 							<height>1618</height>
 							<designbias>3</designbias>
@@ -3704,9 +3710,9 @@ on userevent 'NAVIGATIONCOMPLETE' =
 							<defaultvalue>1</defaultvalue>
 							<bgcolor>70</bgcolor>
 							<fgcolor>72</fgcolor>
-							<ytop>3201</ytop>
-							<width>2493</width>
-							<height>201</height>
+							<ytop>3194</ytop>
+							<width>2576</width>
+							<height>194</height>
 							<designbias>2</designbias>
 							<trimbias>8</trimbias>
 							<updatebias>16</updatebias>
@@ -3725,7 +3731,7 @@ on userevent 'NAVIGATIONCOMPLETE' =
 									<defaultvalue>1</defaultvalue>
 									<bgcolor>70</bgcolor>
 									<fgcolor>72</fgcolor>
-									<width>965</width>
+									<width>958</width>
 									<height>167</height>
 									<designbias>2</designbias>
 									<trimbias>16</trimbias>
@@ -3742,7 +3748,7 @@ on userevent 'NAVIGATIONCOMPLETE' =
 									<typeface>0</typeface>
 									<typesize>8</typesize>
 									<ismultiline>1</ismultiline>
-									<charsperline>16</charsperline>
+									<charsperline>15</charsperline>
 									<lines>1</lines>
 									<stringvalue>
 										<![CDATA[You have entered: ]]>
@@ -3754,8 +3760,8 @@ on userevent 'NAVIGATIONCOMPLETE' =
 									<defaultvalue>1</defaultvalue>
 									<bgcolor>84</bgcolor>
 									<fgcolor>86</fgcolor>
-									<xleft>965</xleft>
-									<width>1493</width>
+									<xleft>958</xleft>
+									<width>1590</width>
 									<height>167</height>
 									<designbias>3</designbias>
 									<trimbias>256</trimbias>
@@ -3795,8 +3801,8 @@ on userevent 'NAVIGATIONCOMPLETE' =
 					<fgcolor>72</fgcolor>
 					<xleft>4847</xleft>
 					<ytop>1861</ytop>
-					<width>243</width>
-					<height>417</height>
+					<width>201</width>
+					<height>347</height>
 					<designbias>2</designbias>
 					<trimbias>16</trimbias>
 					<updatebias>256</updatebias>
@@ -3827,8 +3833,8 @@ on userevent 'NAVIGATIONCOMPLETE' =
 					<fgcolor>72</fgcolor>
 					<xleft>5291</xleft>
 					<ytop>1778</ytop>
-					<width>3694</width>
-					<height>2167</height>
+					<width>3639</width>
+					<height>2250</height>
 					<designbias>2</designbias>
 					<trimbias>16</trimbias>
 					<updatebias>256</updatebias>
@@ -3844,7 +3850,7 @@ on userevent 'NAVIGATIONCOMPLETE' =
 					<typeface>0</typeface>
 					<typesize>8</typesize>
 					<ismultiline>1</ismultiline>
-					<charsperline>63</charsperline>
+					<charsperline>58</charsperline>
 					<lines>16</lines>
 					<stringvalue>
 						<![CDATA[This is a SubfForm  with 
@@ -7034,7 +7040,7 @@ declare
 enddeclare
 {
 	furl = 'file:///' + Cursession.GetEnv (name = 'II_SYSTEM') + '/ingres/license.com.pdf';
-	// frame.flush() is mandatory to initialize subform correctly
+    // frame.flush() is mandatory to initialize subform correctly 
 	// during initialize() block before setting attribute WebPage.
 	curframe.flush ();
 	FIELD(subform1).webpage = true;
@@ -7156,11 +7162,17 @@ on userevent 'NAVIGATIONCOMPLETE' =
 ** Hard coded RGB (integer) colors, expect regular color to have been set already in BgColor via Property Inspector
 */
 on mouseenter = {
+    curexec.trace('hello '+ varchar(curframe.triggerfield.BgColor));
+
     curframe.triggerfield.BgColor = RGB(red=0, green=105, blue=217);
+
+    // TODO is there an unRGB() - believe we have something in 4gl
+    curexec.trace('hello now '+ varchar(curframe.triggerfield.BgColor));
 }
 
 on mouseexit = {
     // restore color
+    curexec.trace('bye');
     curframe.triggerfield.BgColor = RGB(red=0, green=123, blue=255);
 }
 ]]>
@@ -10326,7 +10338,7 @@ on click =
 declare
 enddeclare
 {
-	// frame.flush() is mandatory to initialize subform correctly
+    // frame.flush() is mandatory to initialize subform correctly 
 	// during initialize() block before setting attribute WebPage.
 	curframe.flush ();
 	FIELD(subform1).webpage = true;
@@ -10335,8 +10347,7 @@ enddeclare
 
 on click btnload =
 {
-	// This demo requires internet access and makes use of Google Charts API
-	// https://developers.google.com/chart/infographics/docs/qr_codes
+	// This demo requires internet access
 	FIELD(subform1).Url(url='https://chart.googleapis.com/chart?cht=qr&chs=320x320&chl=' + fdata /* TODO url encode */ , pageloadevent = 'NAVIGATIONCOMPLETE');
 }
 
@@ -10446,11 +10457,17 @@ on userevent 'NAVIGATIONCOMPLETE' =
 ** Hard coded RGB (integer) colors, expect regular color to have been set already in BgColor via Property Inspector
 */
 on mouseenter = {
+    curexec.trace('hello '+ varchar(curframe.triggerfield.BgColor));
+
     curframe.triggerfield.BgColor = RGB(red=0, green=105, blue=217);
+
+    // TODO is there an unRGB() - believe we have something in 4gl
+    curexec.trace('hello now '+ varchar(curframe.triggerfield.BgColor));
 }
 
 on mouseexit = {
     // restore color
+    curexec.trace('bye');
     curframe.triggerfield.BgColor = RGB(red=0, green=123, blue=255);
 }
 ]]>
@@ -13610,6 +13627,3239 @@ on click =
 			<row_class>formfield</row_class>
 		</fielddefaults>
 	</COMPONENT>
+	<COMPONENT name="WebView2TwoViews" xsi:type="framesource">
+		<script>
+			<![CDATA[initialize()=
+declare
+	strHtml = stringobject;
+enddeclare
+{
+    // frame.flush() is mandatory to initialize subform correctly 
+	// during initialize() block before setting attribute WebPage.
+	curframe.flush();
+
+	FIELD(subform1).webpage = true;
+	FIELD(subform1).Url(url='https://aviationweather.gov/gfa/#obs');
+
+	// https://oilprice.com/oil-price-charts/
+	FIELD(subform2).webpage = true;
+	strHtml.value = '<div width="500" style="max-width: 100%;" data-current-size="medium" data-size="medium" class="oilprice_com_widget_iframe_embed_holder"><iframe class="oilprice_com_widget_iframe_embed" src="https://oilprice.com/widgets/oilprice_image/45_4_1711488180" title="WTI Crude Price Chart 2/25/2024 to 3/26/2024"></iframe></div><script type="text/javascript" src="https://oilprice.com/a/js/widgets/oilprices/embed.js"></script>';
+	FIELD(subform2).URL(html=strHtml);
+}
+]]>
+		</script>
+		<templatename>standard</templatename>
+		<hasscrollbars>1</hasscrollbars>
+		<hasstatusbar>1</hasstatusbar>
+		<isautosized>1</isautosized>
+		<isresizeable>1</isresizeable>
+		<startmenu>
+			<bgcolor>2</bgcolor>
+			<fgcolor>1</fgcolor>
+			<designbias>16384</designbias>
+			<trimbias>16384</trimbias>
+			<updatebias>16384</updatebias>
+			<querybias>16384</querybias>
+			<readbias>16384</readbias>
+			<user1bias>16384</user1bias>
+			<user2bias>16384</user2bias>
+			<user3bias>16384</user3bias>
+		</startmenu>
+		<topform>
+			<bgcolor>70</bgcolor>
+			<fgcolor>1</fgcolor>
+			<width>23999</width>
+			<height>24000</height>
+			<designbias>16</designbias>
+			<trimbias>8</trimbias>
+			<updatebias>16</updatebias>
+			<querybias>16</querybias>
+			<readbias>16</readbias>
+			<user1bias>16</user1bias>
+			<user2bias>16</user2bias>
+			<user3bias>16</user3bias>
+			<fieldstyle>0</fieldstyle>
+			<bgpattern>1</bgpattern>
+			<focusbehavior>1</focusbehavior>
+			<outlinecolor>1</outlinecolor>
+			<outlinewidth>0</outlinewidth>
+			<isresizebounded>1</isresizebounded>
+			<childfields>
+				<row xsi:type="subform">
+					<name>subform1</name>
+					<defaultvalue>1</defaultvalue>
+					<bgcolor>70</bgcolor>
+					<fgcolor>72</fgcolor>
+					<xleft>347</xleft>
+					<ytop>208</ytop>
+					<width>7979</width>
+					<height>6750</height>
+					<designbias>3</designbias>
+					<trimbias>8</trimbias>
+					<updatebias>16</updatebias>
+					<querybias>16</querybias>
+					<readbias>32</readbias>
+					<user1bias>16</user1bias>
+					<user2bias>16</user2bias>
+					<user3bias>16</user3bias>
+					<bgpattern>-1</bgpattern>
+					<focusbehavior>1</focusbehavior>
+					<outlinecolor>87</outlinecolor>
+					<outlinestyle>4</outlinestyle>
+					<outlinewidth>0</outlinewidth>
+					<isresizebounded>1</isresizebounded>
+				</row>
+				<row xsi:type="subform">
+					<name>subform2</name>
+					<defaultvalue>1</defaultvalue>
+					<bgcolor>70</bgcolor>
+					<fgcolor>72</fgcolor>
+					<xleft>8534</xleft>
+					<ytop>215</ytop>
+					<width>3319</width>
+					<height>3354</height>
+					<designbias>3</designbias>
+					<trimbias>8</trimbias>
+					<updatebias>16</updatebias>
+					<querybias>16</querybias>
+					<readbias>32</readbias>
+					<user1bias>16</user1bias>
+					<user2bias>16</user2bias>
+					<user3bias>16</user3bias>
+					<bgpattern>-1</bgpattern>
+					<focusbehavior>1</focusbehavior>
+					<outlinecolor>87</outlinecolor>
+					<outlinestyle>4</outlinestyle>
+					<outlinewidth>0</outlinewidth>
+					<isresizebounded>1</isresizebounded>
+				</row>
+				<row_class>formfield</row_class>
+			</childfields>
+			<transparentcolor>91</transparentcolor>
+		</topform>
+		<windowheight>8632</windowheight>
+		<windowwidth>12180</windowwidth>
+		<windowtitle>WebView2 Demo: URL</windowtitle>
+		<gridx>250</gridx>
+		<gridy>250</gridy>
+		<fielddefaults>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[barfield]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="barfield" row="1" column="1">
+						<datatype>i4</datatype>
+						<defaultvalue>3</defaultvalue>
+						<defaultstring>0</defaultstring>
+						<bgcolor>84</bgcolor>
+						<fgcolor>70</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>743</width>
+						<height>528</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<gravity>17</gravity>
+						<bgpattern>-1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<focusbehavior>2</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<fgpattern>-1</fgpattern>
+						<growfrom>6</growfrom>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[boxtrim]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="boxtrim" row="1" column="1">
+						<datatype>varchar(100)</datatype>
+						<defaultvalue>1</defaultvalue>
+						<bgcolor>70</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>493</width>
+						<height>174</height>
+						<designbias>4</designbias>
+						<trimbias>16</trimbias>
+						<updatebias>256</updatebias>
+						<querybias>256</querybias>
+						<readbias>256</readbias>
+						<user1bias>256</user1bias>
+						<user2bias>256</user2bias>
+						<user3bias>256</user3bias>
+						<gravity>17</gravity>
+						<requirerealfield>1</requirerealfield>
+						<bgpattern>-1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<focusbehavior>3</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<typeface>0</typeface>
+						<typesize>8</typesize>
+						<ismultiline>1</ismultiline>
+						<charsperline>7</charsperline>
+						<lines>1</lines>
+						<stringvalue>
+							<![CDATA[Box trim]]>
+						</stringvalue>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[buttonfield]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="buttonfield" row="1" column="1">
+						<datatype>i4</datatype>
+						<defaultvalue>1</defaultvalue>
+						<bgcolor>70</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>972</width>
+						<height>299</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<gravity>17</gravity>
+						<requirerealfield>1</requirerealfield>
+						<bgpattern>-1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<focusbehavior>2</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<typeface>0</typeface>
+						<typesize>8</typesize>
+						<textlabel>
+							<![CDATA[Button]]>
+						</textlabel>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[controlbutton]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="controlbutton" row="1" column="1">
+						<bgcolor>70</bgcolor>
+						<fgcolor>1</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>132</width>
+						<height>132</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<gravity>17</gravity>
+						<bgpattern>-1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<focusbehavior>1</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>1</outlinestyle>
+						<outlinewidth>7</outlinewidth>
+						<optionmenu>
+							<bgcolor>2</bgcolor>
+							<fgcolor>1</fgcolor>
+							<designbias>8192</designbias>
+							<trimbias>16384</trimbias>
+							<updatebias>16384</updatebias>
+							<querybias>16384</querybias>
+							<readbias>16384</readbias>
+							<user1bias>16384</user1bias>
+							<user2bias>16384</user2bias>
+							<user3bias>16384</user3bias>
+						</optionmenu>
+						<popupalignment>0</popupalignment>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[ellipseshape]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="ellipseshape" row="1" column="1">
+						<datatype>i4</datatype>
+						<defaultvalue>1</defaultvalue>
+						<bgcolor>70</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>826</width>
+						<height>285</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>256</updatebias>
+						<querybias>256</querybias>
+						<readbias>256</readbias>
+						<user1bias>256</user1bias>
+						<user2bias>256</user2bias>
+						<user3bias>256</user3bias>
+						<gravity>17</gravity>
+						<bgpattern>-1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[entryfield]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="entryfield" row="1" column="1">
+						<datatype>varchar(100)</datatype>
+						<defaultvalue>1</defaultvalue>
+						<bgcolor>84</bgcolor>
+						<fgcolor>86</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>917</width>
+						<height>174</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<gravity>17</gravity>
+						<bgpattern>-1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<focusbehavior>4</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<typeface>0</typeface>
+						<typesize>8</typesize>
+						<charsperline>14</charsperline>
+						<lines>1</lines>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[entryfield]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="entryfield" row="1" column="1">
+						<datatype>varchar(100)</datatype>
+						<defaultvalue>1</defaultvalue>
+						<bgcolor>84</bgcolor>
+						<fgcolor>86</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>903</width>
+						<height>319</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<gravity>17</gravity>
+						<bgpattern>-1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<focusbehavior>3</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<typeface>0</typeface>
+						<typesize>8</typesize>
+						<ismultiline>1</ismultiline>
+						<hasscrollbar>1</hasscrollbar>
+						<charsperline>11</charsperline>
+						<lines>2</lines>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[extobjfield]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="extobjfield" row="1" column="1">
+						<datatype>integer</datatype>
+						<bgcolor>70</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>528</width>
+						<height>528</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<bgpattern>1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<focusbehavior>4</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[flexibleform]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="flexibleform" row="1" column="1">
+						<bgcolor>70</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>618</width>
+						<height>444</height>
+						<designbias>4</designbias>
+						<trimbias>8</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<bgpattern>-1</bgpattern>
+						<focusbehavior>1</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<outlinewidth>0</outlinewidth>
+						<ismovebounded>0</ismovebounded>
+						<childfields>
+							<row xsi:type="boxtrim">
+								<datatype>varchar(100)</datatype>
+								<defaultvalue>1</defaultvalue>
+								<bgcolor>70</bgcolor>
+								<fgcolor>72</fgcolor>
+								<width>167</width>
+								<height>174</height>
+								<designbias>256</designbias>
+								<trimbias>16</trimbias>
+								<updatebias>256</updatebias>
+								<querybias>256</querybias>
+								<readbias>256</readbias>
+								<user1bias>256</user1bias>
+								<user2bias>256</user2bias>
+								<user3bias>256</user3bias>
+								<requirerealfield>1</requirerealfield>
+								<bgpattern>-1</bgpattern>
+								<bgdisplaypolicy>2</bgdisplaypolicy>
+								<focusbehavior>3</focusbehavior>
+								<outlinecolor>1</outlinecolor>
+								<typeface>0</typeface>
+								<typesize>8</typesize>
+								<ismultiline>1</ismultiline>
+								<charsperline>2</charsperline>
+								<lines>1</lines>
+								<stringvalue>
+									<![CDATA[A]]>
+								</stringvalue>
+							</row>
+							<row xsi:type="freetrim">
+								<datatype>varchar(100)</datatype>
+								<defaultvalue>1</defaultvalue>
+								<bgcolor>70</bgcolor>
+								<fgcolor>72</fgcolor>
+								<xleft>472</xleft>
+								<ytop>243</ytop>
+								<width>118</width>
+								<height>174</height>
+								<designbias>256</designbias>
+								<trimbias>16</trimbias>
+								<updatebias>256</updatebias>
+								<querybias>256</querybias>
+								<readbias>256</readbias>
+								<user1bias>256</user1bias>
+								<user2bias>256</user2bias>
+								<user3bias>256</user3bias>
+								<bgpattern>-1</bgpattern>
+								<bgdisplaypolicy>2</bgdisplaypolicy>
+								<focusbehavior>3</focusbehavior>
+								<outlinecolor>1</outlinecolor>
+								<outlinewidth>1</outlinewidth>
+								<typeface>0</typeface>
+								<typesize>8</typesize>
+								<ismultiline>1</ismultiline>
+								<charsperline>1</charsperline>
+								<lines>1</lines>
+								<stringvalue>
+									<![CDATA[B]]>
+								</stringvalue>
+							</row>
+							<row_class>formfield</row_class>
+						</childfields>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[freetrim]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="freetrim" row="1" column="1">
+						<datatype>varchar(100)</datatype>
+						<defaultvalue>1</defaultvalue>
+						<bgcolor>70</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>458</width>
+						<height>174</height>
+						<designbias>4</designbias>
+						<trimbias>16</trimbias>
+						<updatebias>256</updatebias>
+						<querybias>256</querybias>
+						<readbias>256</readbias>
+						<user1bias>256</user1bias>
+						<user2bias>256</user2bias>
+						<user3bias>256</user3bias>
+						<gravity>17</gravity>
+						<bgpattern>-1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<focusbehavior>3</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<typeface>0</typeface>
+						<typesize>8</typesize>
+						<ismultiline>1</ismultiline>
+						<charsperline>7</charsperline>
+						<lines>1</lines>
+						<stringvalue>
+							<![CDATA[Free trim]]>
+						</stringvalue>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[imagefield]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="imagefield" row="1" column="1">
+						<datatype>bitmapobject</datatype>
+						<isnullable>1</isnullable>
+						<defaultvalue>1</defaultvalue>
+						<bgcolor>70</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>549</width>
+						<height>382</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<gravity>17</gravity>
+						<bgpattern>-1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<focusbehavior>2</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<displaypolicy>1</displaypolicy>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[imagetrim]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="imagetrim" row="1" column="1">
+						<datatype>bitmapobject</datatype>
+						<isnullable>1</isnullable>
+						<defaultvalue>1</defaultvalue>
+						<bgcolor>70</bgcolor>
+						<fgcolor>1</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>243</width>
+						<height>243</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<gravity>17</gravity>
+						<bgpattern>-1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<focusbehavior>2</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<image>
+							<obj_encoded>
+								<![CDATA[12:bitmapobject
+0
+1
+9
+69
+43:d:\hi_art\frame_editor_24mar94\ImagTrm3.BMP
+0
+1
+2
+0
+23
+23
+2
+0
+69
+r3007ffffc4000044003744001c44007f4400494400084403784401c84407f84
+40498440088441848443c48447e4844ff2845ffa847ffe847ffffcr300
+0
+0
+0
+0
+0
+-1
+0
+0
+0
+0
+-1:
+-1:
+]]>
+							</obj_encoded>
+						</image>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[listfield]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="listfield" row="1" column="1">
+						<datatype>integer</datatype>
+						<defaultvalue>3</defaultvalue>
+						<defaultstring>1</defaultstring>
+						<bgcolor>84</bgcolor>
+						<fgcolor>86</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>965</width>
+						<height>569</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<gravity>17</gravity>
+						<bgpattern>-1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<focusbehavior>2</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<valuelist>
+							<choiceitems>
+								<row>
+									<enumdisplay>First Item</enumdisplay>
+									<enumtext>First Item</enumtext>
+									<enumvalue>1</enumvalue>
+								</row>
+								<row>
+									<enumdisplay>Second Item</enumdisplay>
+									<enumtext>Second Item</enumtext>
+									<enumvalue>2</enumvalue>
+								</row>
+								<row>
+									<enumdisplay>Third Item</enumdisplay>
+									<enumtext>Third Item</enumtext>
+									<enumvalue>3</enumvalue>
+								</row>
+								<row>
+									<enumdisplay>Fourth Item</enumdisplay>
+									<enumtext>Fourth Item</enumtext>
+									<enumvalue>4</enumvalue>
+								</row>
+								<row>
+									<enumdisplay>Fifth Item</enumdisplay>
+									<enumtext>Fifth Item</enumtext>
+									<enumvalue>5</enumvalue>
+								</row>
+								<row>
+									<enumdisplay>Sixth Item</enumdisplay>
+									<enumtext>Sixth Item</enumtext>
+									<enumvalue>6</enumvalue>
+								</row>
+								<row_class>choicedetail</row_class>
+							</choiceitems>
+						</valuelist>
+						<typeface>0</typeface>
+						<typesize>8</typesize>
+						<visiblerows>4</visiblerows>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[listviewfield]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="listviewfield" row="1" column="1">
+						<datatype>integer</datatype>
+						<bgcolor>84</bgcolor>
+						<fgcolor>86</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>528</width>
+						<height>528</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<bgpattern>1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<focusbehavior>2</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<valuelist/>
+						<typeface>0</typeface>
+						<typesize>8</typesize>
+						<colattributes>
+							<row>
+								<columnwidth>1500</columnwidth>
+								<headertext>Column 1</headertext>
+							</row>
+							<row>
+								<columnwidth>1500</columnwidth>
+								<headertext>Column 2</headertext>
+							</row>
+							<row_class>listviewcolattr</row_class>
+						</colattributes>
+						<style>4</style>
+						<largeimageheight>32</largeimageheight>
+						<largeimagewidth>32</largeimagewidth>
+						<smallimageheight>16</smallimageheight>
+						<smallimagewidth>16</smallimagewidth>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[matrixfield]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="matrixfield" row="1" column="1">
+						<bgcolor>70</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>674</width>
+						<height>444</height>
+						<designbias>4</designbias>
+						<trimbias>8</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<bgpattern>-1</bgpattern>
+						<focusbehavior>1</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<outlinewidth>0</outlinewidth>
+						<childfields>
+							<row xsi:type="freetrim" row="1" column="1">
+								<datatype>varchar(100)</datatype>
+								<defaultvalue>1</defaultvalue>
+								<bgcolor>70</bgcolor>
+								<fgcolor>72</fgcolor>
+								<xleft>28</xleft>
+								<ytop>28</ytop>
+								<width>250</width>
+								<height>174</height>
+								<designbias>256</designbias>
+								<trimbias>16</trimbias>
+								<updatebias>256</updatebias>
+								<querybias>256</querybias>
+								<readbias>256</readbias>
+								<user1bias>256</user1bias>
+								<user2bias>256</user2bias>
+								<user3bias>256</user3bias>
+								<bgpattern>-1</bgpattern>
+								<bgdisplaypolicy>2</bgdisplaypolicy>
+								<focusbehavior>3</focusbehavior>
+								<outlinecolor>1</outlinecolor>
+								<outlinestyle>4</outlinestyle>
+								<typeface>0</typeface>
+								<typesize>8</typesize>
+								<ismultiline>1</ismultiline>
+								<charsperline>3</charsperline>
+								<lines>1</lines>
+								<stringvalue>
+									<![CDATA[One]]>
+								</stringvalue>
+							</row>
+							<row xsi:type="freetrim" row="1" column="2">
+								<datatype>varchar(100)</datatype>
+								<defaultvalue>1</defaultvalue>
+								<bgcolor>70</bgcolor>
+								<fgcolor>72</fgcolor>
+								<xleft>326</xleft>
+								<ytop>28</ytop>
+								<width>333</width>
+								<height>174</height>
+								<designbias>256</designbias>
+								<trimbias>16</trimbias>
+								<updatebias>256</updatebias>
+								<querybias>256</querybias>
+								<readbias>256</readbias>
+								<user1bias>256</user1bias>
+								<user2bias>256</user2bias>
+								<user3bias>256</user3bias>
+								<bgpattern>-1</bgpattern>
+								<bgdisplaypolicy>2</bgdisplaypolicy>
+								<focusbehavior>3</focusbehavior>
+								<outlinecolor>1</outlinecolor>
+								<outlinestyle>4</outlinestyle>
+								<typeface>0</typeface>
+								<typesize>8</typesize>
+								<ismultiline>1</ismultiline>
+								<charsperline>5</charsperline>
+								<lines>1</lines>
+								<stringvalue>
+									<![CDATA[Three]]>
+								</stringvalue>
+							</row>
+							<row xsi:type="freetrim" row="2" column="1">
+								<datatype>varchar(100)</datatype>
+								<defaultvalue>1</defaultvalue>
+								<bgcolor>70</bgcolor>
+								<fgcolor>72</fgcolor>
+								<xleft>28</xleft>
+								<ytop>243</ytop>
+								<width>257</width>
+								<height>174</height>
+								<designbias>256</designbias>
+								<trimbias>16</trimbias>
+								<updatebias>256</updatebias>
+								<querybias>256</querybias>
+								<readbias>256</readbias>
+								<user1bias>256</user1bias>
+								<user2bias>256</user2bias>
+								<user3bias>256</user3bias>
+								<bgpattern>-1</bgpattern>
+								<bgdisplaypolicy>2</bgdisplaypolicy>
+								<focusbehavior>3</focusbehavior>
+								<outlinecolor>1</outlinecolor>
+								<outlinestyle>4</outlinestyle>
+								<typeface>0</typeface>
+								<typesize>8</typesize>
+								<ismultiline>1</ismultiline>
+								<charsperline>4</charsperline>
+								<lines>1</lines>
+								<stringvalue>
+									<![CDATA[Two]]>
+								</stringvalue>
+							</row>
+							<row xsi:type="freetrim" row="2" column="2">
+								<datatype>varchar(100)</datatype>
+								<defaultvalue>1</defaultvalue>
+								<bgcolor>70</bgcolor>
+								<fgcolor>72</fgcolor>
+								<xleft>347</xleft>
+								<ytop>243</ytop>
+								<width>257</width>
+								<height>174</height>
+								<designbias>256</designbias>
+								<trimbias>16</trimbias>
+								<updatebias>256</updatebias>
+								<querybias>256</querybias>
+								<readbias>256</readbias>
+								<user1bias>256</user1bias>
+								<user2bias>256</user2bias>
+								<user3bias>256</user3bias>
+								<bgpattern>-1</bgpattern>
+								<bgdisplaypolicy>2</bgdisplaypolicy>
+								<focusbehavior>3</focusbehavior>
+								<outlinecolor>1</outlinecolor>
+								<outlinestyle>4</outlinestyle>
+								<typeface>0</typeface>
+								<typesize>8</typesize>
+								<ismultiline>1</ismultiline>
+								<charsperline>4</charsperline>
+								<lines>1</lines>
+								<stringvalue>
+									<![CDATA[Four]]>
+								</stringvalue>
+							</row>
+						</childfields>
+						<collapsepolicy>3</collapsepolicy>
+						<columns>2</columns>
+						<rows>2</rows>
+						<childbottommargin>20</childbottommargin>
+						<childleftmargin>20</childleftmargin>
+						<childrightmargin>20</childrightmargin>
+						<childtopmargin>20</childtopmargin>
+						<separatorwidth>0</separatorwidth>
+					</row>
+					<row xsi:type="matrixfield" row="2" column="1">
+						<bgcolor>70</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>653</ytop>
+						<width>681</width>
+						<height>451</height>
+						<designbias>4</designbias>
+						<trimbias>8</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<fieldstyle>2</fieldstyle>
+						<bgpattern>-1</bgpattern>
+						<focusbehavior>1</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<outlinewidth>0</outlinewidth>
+						<childfields>
+							<row xsi:type="freetrim" row="1" column="1">
+								<datatype>varchar(100)</datatype>
+								<defaultvalue>1</defaultvalue>
+								<bgcolor>70</bgcolor>
+								<fgcolor>72</fgcolor>
+								<xleft>28</xleft>
+								<ytop>28</ytop>
+								<width>250</width>
+								<height>174</height>
+								<designbias>256</designbias>
+								<trimbias>16</trimbias>
+								<updatebias>256</updatebias>
+								<querybias>256</querybias>
+								<readbias>256</readbias>
+								<user1bias>256</user1bias>
+								<user2bias>256</user2bias>
+								<user3bias>256</user3bias>
+								<bgpattern>-1</bgpattern>
+								<bgdisplaypolicy>2</bgdisplaypolicy>
+								<focusbehavior>3</focusbehavior>
+								<outlinecolor>1</outlinecolor>
+								<outlinestyle>4</outlinestyle>
+								<typeface>0</typeface>
+								<typesize>8</typesize>
+								<ismultiline>1</ismultiline>
+								<charsperline>3</charsperline>
+								<lines>1</lines>
+								<stringvalue>
+									<![CDATA[One]]>
+								</stringvalue>
+							</row>
+							<row xsi:type="freetrim" row="1" column="2">
+								<datatype>varchar(100)</datatype>
+								<defaultvalue>1</defaultvalue>
+								<bgcolor>70</bgcolor>
+								<fgcolor>72</fgcolor>
+								<xleft>333</xleft>
+								<ytop>28</ytop>
+								<width>333</width>
+								<height>174</height>
+								<designbias>256</designbias>
+								<trimbias>16</trimbias>
+								<updatebias>256</updatebias>
+								<querybias>256</querybias>
+								<readbias>256</readbias>
+								<user1bias>256</user1bias>
+								<user2bias>256</user2bias>
+								<user3bias>256</user3bias>
+								<bgpattern>-1</bgpattern>
+								<bgdisplaypolicy>2</bgdisplaypolicy>
+								<focusbehavior>3</focusbehavior>
+								<outlinecolor>1</outlinecolor>
+								<outlinestyle>4</outlinestyle>
+								<typeface>0</typeface>
+								<typesize>8</typesize>
+								<ismultiline>1</ismultiline>
+								<charsperline>5</charsperline>
+								<lines>1</lines>
+								<stringvalue>
+									<![CDATA[Three]]>
+								</stringvalue>
+							</row>
+							<row xsi:type="freetrim" row="2" column="1">
+								<datatype>varchar(100)</datatype>
+								<defaultvalue>1</defaultvalue>
+								<bgcolor>70</bgcolor>
+								<fgcolor>72</fgcolor>
+								<xleft>28</xleft>
+								<ytop>250</ytop>
+								<width>257</width>
+								<height>174</height>
+								<designbias>256</designbias>
+								<trimbias>16</trimbias>
+								<updatebias>256</updatebias>
+								<querybias>256</querybias>
+								<readbias>256</readbias>
+								<user1bias>256</user1bias>
+								<user2bias>256</user2bias>
+								<user3bias>256</user3bias>
+								<bgpattern>-1</bgpattern>
+								<bgdisplaypolicy>2</bgdisplaypolicy>
+								<focusbehavior>3</focusbehavior>
+								<outlinecolor>1</outlinecolor>
+								<outlinestyle>4</outlinestyle>
+								<typeface>0</typeface>
+								<typesize>8</typesize>
+								<ismultiline>1</ismultiline>
+								<charsperline>4</charsperline>
+								<lines>1</lines>
+								<stringvalue>
+									<![CDATA[Two]]>
+								</stringvalue>
+							</row>
+							<row xsi:type="freetrim" row="2" column="2">
+								<datatype>varchar(100)</datatype>
+								<defaultvalue>1</defaultvalue>
+								<bgcolor>70</bgcolor>
+								<fgcolor>72</fgcolor>
+								<xleft>368</xleft>
+								<ytop>250</ytop>
+								<width>257</width>
+								<height>174</height>
+								<designbias>256</designbias>
+								<trimbias>16</trimbias>
+								<updatebias>256</updatebias>
+								<querybias>256</querybias>
+								<readbias>256</readbias>
+								<user1bias>256</user1bias>
+								<user2bias>256</user2bias>
+								<user3bias>256</user3bias>
+								<bgpattern>-1</bgpattern>
+								<bgdisplaypolicy>2</bgdisplaypolicy>
+								<focusbehavior>3</focusbehavior>
+								<outlinecolor>1</outlinecolor>
+								<outlinestyle>4</outlinestyle>
+								<typeface>0</typeface>
+								<typesize>8</typesize>
+								<ismultiline>1</ismultiline>
+								<charsperline>4</charsperline>
+								<lines>1</lines>
+								<stringvalue>
+									<![CDATA[Four]]>
+								</stringvalue>
+							</row>
+						</childfields>
+						<collapsepolicy>3</collapsepolicy>
+						<columns>2</columns>
+						<rows>2</rows>
+						<childbottommargin>20</childbottommargin>
+						<childleftmargin>20</childleftmargin>
+						<childrightmargin>20</childrightmargin>
+						<childtopmargin>20</childtopmargin>
+						<separatorstyle>3</separatorstyle>
+						<separatorwidth>1</separatorwidth>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>2</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[optionfield]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="optionfield" row="1" column="1">
+						<datatype>integer</datatype>
+						<defaultvalue>3</defaultvalue>
+						<defaultstring>1</defaultstring>
+						<bgcolor>84</bgcolor>
+						<fgcolor>86</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>1000</width>
+						<height>208</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<gravity>17</gravity>
+						<bgpattern>-1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<focusbehavior>2</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<valuelist>
+							<choiceitems>
+								<row>
+									<enumdisplay>First Item</enumdisplay>
+									<enumtext>First Item</enumtext>
+									<enumvalue>1</enumvalue>
+								</row>
+								<row>
+									<enumdisplay>Second Item</enumdisplay>
+									<enumtext>Second Item</enumtext>
+									<enumvalue>2</enumvalue>
+								</row>
+								<row>
+									<enumdisplay>Third Item</enumdisplay>
+									<enumtext>Third Item</enumtext>
+									<enumvalue>3</enumvalue>
+								</row>
+								<row_class>choicedetail</row_class>
+							</choiceitems>
+						</valuelist>
+						<curenumindex>1</curenumindex>
+						<typeface>0</typeface>
+						<typesize>8</typesize>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[palettefield]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="palettefield" row="1" column="1">
+						<datatype>integer</datatype>
+						<defaultvalue>3</defaultvalue>
+						<defaultstring>1</defaultstring>
+						<bgcolor>70</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>500</width>
+						<height>750</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<gravity>17</gravity>
+						<bgpattern>-1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<focusbehavior>2</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<valuelist>
+							<choiceitems>
+								<row>
+									<enumvalue>1</enumvalue>
+									<enumbitmap>
+										<obj_encoded>
+											<![CDATA[12:bitmapobject
+0
+1
+9
+60
+64:/m/hound/fe6/wgl/front/apped/grant/src/apped/Icons/pal_icon1.xbm
+0
+1
+2
+0
+20
+20
+2
+0
+60
+R1190070000070000070R11c00
+0
+0
+0
+0
+0
+-1
+0
+0
+0
+0
+-1:
+-1:
+]]>
+										</obj_encoded>
+									</enumbitmap>
+								</row>
+								<row>
+									<enumvalue>2</enumvalue>
+									<enumbitmap>
+										<obj_encoded>
+											<![CDATA[12:bitmapobject
+0
+1
+9
+60
+64:/m/hound/fe6/wgl/front/apped/grant/src/apped/Icons/pal_icon2.xbm
+0
+1
+2
+0
+20
+20
+2
+0
+60
+ra0007000007000007R113000e00000e00000erb00
+0
+0
+0
+0
+0
+-1
+0
+0
+0
+0
+-1:
+-1:
+]]>
+										</obj_encoded>
+									</enumbitmap>
+								</row>
+								<row>
+									<enumvalue>3</enumvalue>
+									<enumbitmap>
+										<obj_encoded>
+											<![CDATA[12:bitmapobject
+0
+1
+9
+60
+64:/m/hound/fe6/wgl/front/apped/grant/src/apped/Icons/pal_icon3.xbm
+0
+1
+2
+0
+20
+20
+2
+0
+60
+r3001c00001c00001cr90070000070000070r80001c00001c00001c0r600
+0
+0
+0
+0
+0
+-1
+0
+0
+0
+0
+-1:
+-1:
+]]>
+										</obj_encoded>
+									</enumbitmap>
+								</row>
+								<row>
+									<enumvalue>4</enumvalue>
+									<enumbitmap>
+										<obj_encoded>
+											<![CDATA[12:bitmapobject
+0
+1
+9
+60
+64:/m/hound/fe6/wgl/front/apped/grant/src/apped/Icons/pal_icon4.xbm
+0
+1
+2
+0
+20
+20
+2
+0
+60
+r9000e07000e07000e07R113000e07000e07000e07ra00
+0
+0
+0
+0
+0
+-1
+0
+0
+0
+0
+-1:
+-1:
+]]>
+										</obj_encoded>
+									</enumbitmap>
+								</row>
+								<row>
+									<enumvalue>5</enumvalue>
+									<enumbitmap>
+										<obj_encoded>
+											<![CDATA[12:bitmapobject
+0
+1
+9
+60
+64:/m/hound/fe6/wgl/front/apped/grant/src/apped/Icons/pal_icon5.xbm
+0
+1
+2
+0
+20
+20
+2
+0
+60
+r3001c01c01c01c01c01c0r70070000070000070r7001c01c01c01c01c01c0r6
+00
+0
+0
+0
+0
+0
+-1
+0
+0
+0
+0
+-1:
+-1:
+]]>
+										</obj_encoded>
+									</enumbitmap>
+								</row>
+								<row>
+									<enumvalue>6</enumvalue>
+									<enumbitmap>
+										<obj_encoded>
+											<![CDATA[12:bitmapobject
+0
+1
+9
+60
+64:/m/hound/fe6/wgl/front/apped/grant/src/apped/Icons/pal_icon6.xbm
+0
+1
+2
+0
+20
+20
+2
+0
+60
+r3000e07000e07000e07r7000e07000e07000e07r7000e07000e07000e07r700
+0
+0
+0
+0
+0
+-1
+0
+0
+0
+0
+-1:
+-1:
+]]>
+										</obj_encoded>
+									</enumbitmap>
+								</row>
+								<row_class>choicedetail</row_class>
+							</choiceitems>
+						</valuelist>
+						<columns>2</columns>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[popupbutton]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="popupbutton" row="1" column="1">
+						<bgcolor>70</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>1042</width>
+						<height>285</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<requirerealfield>1</requirerealfield>
+						<bgpattern>1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<focusbehavior>2</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<outlinewidth>0</outlinewidth>
+						<typeface>0</typeface>
+						<typesize>8</typesize>
+						<textlabel>
+							<![CDATA[Popup Button]]>
+						</textlabel>
+						<optionmenu>
+							<bgcolor>2</bgcolor>
+							<fgcolor>1</fgcolor>
+							<designbias>8192</designbias>
+							<trimbias>16384</trimbias>
+							<updatebias>16384</updatebias>
+							<querybias>16384</querybias>
+							<readbias>16384</readbias>
+							<user1bias>16384</user1bias>
+							<user2bias>16384</user2bias>
+							<user3bias>16384</user3bias>
+						</optionmenu>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[radiofield]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="radiofield" row="1" column="1">
+						<datatype>integer</datatype>
+						<defaultvalue>3</defaultvalue>
+						<defaultstring>1</defaultstring>
+						<bgcolor>70</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>931</width>
+						<height>701</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<gravity>17</gravity>
+						<bgpattern>-1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<focusbehavior>2</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<valuelist>
+							<choiceitems>
+								<row>
+									<enumdisplay>First Item</enumdisplay>
+									<enumtext>First Item</enumtext>
+									<enumvalue>1</enumvalue>
+								</row>
+								<row>
+									<enumdisplay>Second Item</enumdisplay>
+									<enumtext>Second Item</enumtext>
+									<enumvalue>2</enumvalue>
+								</row>
+								<row>
+									<enumdisplay>Third Item</enumdisplay>
+									<enumtext>Third Item</enumtext>
+									<enumvalue>3</enumvalue>
+								</row>
+								<row_class>choicedetail</row_class>
+							</choiceitems>
+						</valuelist>
+						<typeface>0</typeface>
+						<typesize>8</typesize>
+						<columns>1</columns>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[rectangleshape]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="rectangleshape" row="1" column="1">
+						<datatype>i4</datatype>
+						<defaultvalue>1</defaultvalue>
+						<bgcolor>70</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>806</width>
+						<height>243</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>256</updatebias>
+						<querybias>256</querybias>
+						<readbias>256</readbias>
+						<user1bias>256</user1bias>
+						<user2bias>256</user2bias>
+						<user3bias>256</user3bias>
+						<gravity>17</gravity>
+						<bgpattern>-1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+					</row>
+					<row xsi:type="rectangleshape" row="2" column="1">
+						<datatype>i4</datatype>
+						<defaultvalue>1</defaultvalue>
+						<bgcolor>2</bgcolor>
+						<fgcolor>1</fgcolor>
+						<xleft>278</xleft>
+						<ytop>424</ytop>
+						<width>833</width>
+						<height>278</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>256</updatebias>
+						<querybias>256</querybias>
+						<readbias>256</readbias>
+						<user1bias>256</user1bias>
+						<user2bias>256</user2bias>
+						<user3bias>256</user3bias>
+						<gravity>17</gravity>
+						<fieldstyle>2</fieldstyle>
+						<bgpattern>-1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<linewidth>0</linewidth>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>2</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[scrollbarfield]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="scrollbarfield" row="1" column="1">
+						<datatype>i4</datatype>
+						<defaultvalue>3</defaultvalue>
+						<defaultstring>0</defaultstring>
+						<bgcolor>25</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>1299</width>
+						<height>167</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<gravity>17</gravity>
+						<bgpattern>-1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<focusbehavior>2</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<elevatorsize>20</elevatorsize>
+						<orientation>2</orientation>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[segmentshape]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="segmentshape" row="1" column="1">
+						<bgcolor>2</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>840</width>
+						<height>292</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>256</updatebias>
+						<querybias>256</querybias>
+						<readbias>256</readbias>
+						<user1bias>256</user1bias>
+						<user2bias>256</user2bias>
+						<user3bias>256</user3bias>
+						<gravity>17</gravity>
+						<bgpattern>2</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<point1x>278</point1x>
+						<point1y>49</point1y>
+						<point2x>1090</point2x>
+						<point2y>326</point2y>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[sliderfield]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="sliderfield" row="1" column="1">
+						<datatype>i4</datatype>
+						<defaultvalue>3</defaultvalue>
+						<defaultstring>0</defaultstring>
+						<bgcolor>70</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>1160</width>
+						<height>292</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<gravity>17</gravity>
+						<bgpattern>-1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<focusbehavior>2</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<outlinewidth>0</outlinewidth>
+						<orientation>2</orientation>
+						<typeface>0</typeface>
+						<typesize>8</typesize>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[stackfield]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="stackfield" row="1" column="1">
+						<bgcolor>70</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>285</xleft>
+						<ytop>49</ytop>
+						<width>333</width>
+						<height>535</height>
+						<designbias>4</designbias>
+						<trimbias>8</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<bgpattern>-1</bgpattern>
+						<focusbehavior>1</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinewidth>0</outlinewidth>
+						<childfields>
+							<row xsi:type="freetrim">
+								<datatype>varchar(100)</datatype>
+								<defaultvalue>1</defaultvalue>
+								<bgcolor>70</bgcolor>
+								<fgcolor>72</fgcolor>
+								<width>250</width>
+								<height>174</height>
+								<designbias>256</designbias>
+								<trimbias>16</trimbias>
+								<updatebias>256</updatebias>
+								<querybias>256</querybias>
+								<readbias>256</readbias>
+								<user1bias>256</user1bias>
+								<user2bias>256</user2bias>
+								<user3bias>256</user3bias>
+								<bgpattern>-1</bgpattern>
+								<bgdisplaypolicy>2</bgdisplaypolicy>
+								<focusbehavior>3</focusbehavior>
+								<outlinecolor>1</outlinecolor>
+								<outlinestyle>4</outlinestyle>
+								<typeface>0</typeface>
+								<typesize>8</typesize>
+								<ismultiline>1</ismultiline>
+								<charsperline>3</charsperline>
+								<lines>1</lines>
+								<stringvalue>
+									<![CDATA[One]]>
+								</stringvalue>
+							</row>
+							<row xsi:type="freetrim">
+								<datatype>varchar(100)</datatype>
+								<defaultvalue>1</defaultvalue>
+								<bgcolor>70</bgcolor>
+								<fgcolor>72</fgcolor>
+								<ytop>174</ytop>
+								<width>257</width>
+								<height>174</height>
+								<designbias>256</designbias>
+								<trimbias>16</trimbias>
+								<updatebias>256</updatebias>
+								<querybias>256</querybias>
+								<readbias>256</readbias>
+								<user1bias>256</user1bias>
+								<user2bias>256</user2bias>
+								<user3bias>256</user3bias>
+								<bgpattern>-1</bgpattern>
+								<bgdisplaypolicy>2</bgdisplaypolicy>
+								<focusbehavior>3</focusbehavior>
+								<outlinecolor>1</outlinecolor>
+								<outlinestyle>4</outlinestyle>
+								<typeface>0</typeface>
+								<typesize>8</typesize>
+								<ismultiline>1</ismultiline>
+								<charsperline>4</charsperline>
+								<lines>1</lines>
+								<stringvalue>
+									<![CDATA[Two]]>
+								</stringvalue>
+							</row>
+							<row xsi:type="freetrim">
+								<datatype>varchar(100)</datatype>
+								<defaultvalue>1</defaultvalue>
+								<bgcolor>70</bgcolor>
+								<fgcolor>72</fgcolor>
+								<ytop>347</ytop>
+								<width>333</width>
+								<height>174</height>
+								<designbias>256</designbias>
+								<trimbias>16</trimbias>
+								<updatebias>256</updatebias>
+								<querybias>256</querybias>
+								<readbias>256</readbias>
+								<user1bias>256</user1bias>
+								<user2bias>256</user2bias>
+								<user3bias>256</user3bias>
+								<bgpattern>-1</bgpattern>
+								<bgdisplaypolicy>2</bgdisplaypolicy>
+								<focusbehavior>3</focusbehavior>
+								<outlinecolor>1</outlinecolor>
+								<outlinestyle>4</outlinestyle>
+								<typeface>0</typeface>
+								<typesize>8</typesize>
+								<ismultiline>1</ismultiline>
+								<charsperline>5</charsperline>
+								<lines>1</lines>
+								<stringvalue>
+									<![CDATA[Three]]>
+								</stringvalue>
+							</row>
+							<row_class>formfield</row_class>
+						</childfields>
+						<separatorcolor>72</separatorcolor>
+						<separatorstyle>-1</separatorstyle>
+						<separatorwidth>0</separatorwidth>
+					</row>
+					<row xsi:type="stackfield" row="2" column="1">
+						<bgcolor>70</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>701</ytop>
+						<width>333</width>
+						<height>549</height>
+						<designbias>4</designbias>
+						<trimbias>8</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<fieldstyle>2</fieldstyle>
+						<bgpattern>-1</bgpattern>
+						<focusbehavior>1</focusbehavior>
+						<outlinecolor>72</outlinecolor>
+						<outlinewidth>1</outlinewidth>
+						<childfields>
+							<row xsi:type="freetrim">
+								<datatype>varchar(100)</datatype>
+								<defaultvalue>1</defaultvalue>
+								<bgcolor>70</bgcolor>
+								<fgcolor>72</fgcolor>
+								<width>250</width>
+								<height>174</height>
+								<designbias>256</designbias>
+								<trimbias>16</trimbias>
+								<updatebias>256</updatebias>
+								<querybias>256</querybias>
+								<readbias>256</readbias>
+								<user1bias>256</user1bias>
+								<user2bias>256</user2bias>
+								<user3bias>256</user3bias>
+								<bgpattern>-1</bgpattern>
+								<bgdisplaypolicy>2</bgdisplaypolicy>
+								<focusbehavior>3</focusbehavior>
+								<outlinecolor>1</outlinecolor>
+								<outlinestyle>4</outlinestyle>
+								<typeface>0</typeface>
+								<typesize>8</typesize>
+								<ismultiline>1</ismultiline>
+								<charsperline>3</charsperline>
+								<lines>1</lines>
+								<stringvalue>
+									<![CDATA[One]]>
+								</stringvalue>
+							</row>
+							<row xsi:type="freetrim">
+								<datatype>varchar(100)</datatype>
+								<defaultvalue>1</defaultvalue>
+								<bgcolor>70</bgcolor>
+								<fgcolor>72</fgcolor>
+								<ytop>194</ytop>
+								<width>257</width>
+								<height>174</height>
+								<designbias>256</designbias>
+								<trimbias>16</trimbias>
+								<updatebias>256</updatebias>
+								<querybias>256</querybias>
+								<readbias>256</readbias>
+								<user1bias>256</user1bias>
+								<user2bias>256</user2bias>
+								<user3bias>256</user3bias>
+								<bgpattern>-1</bgpattern>
+								<bgdisplaypolicy>2</bgdisplaypolicy>
+								<focusbehavior>3</focusbehavior>
+								<outlinecolor>1</outlinecolor>
+								<outlinestyle>4</outlinestyle>
+								<typeface>0</typeface>
+								<typesize>8</typesize>
+								<ismultiline>1</ismultiline>
+								<charsperline>4</charsperline>
+								<lines>1</lines>
+								<stringvalue>
+									<![CDATA[Two]]>
+								</stringvalue>
+							</row>
+							<row xsi:type="freetrim">
+								<datatype>varchar(100)</datatype>
+								<defaultvalue>1</defaultvalue>
+								<bgcolor>70</bgcolor>
+								<fgcolor>72</fgcolor>
+								<ytop>375</ytop>
+								<width>333</width>
+								<height>174</height>
+								<designbias>256</designbias>
+								<trimbias>16</trimbias>
+								<updatebias>256</updatebias>
+								<querybias>256</querybias>
+								<readbias>256</readbias>
+								<user1bias>256</user1bias>
+								<user2bias>256</user2bias>
+								<user3bias>256</user3bias>
+								<bgpattern>-1</bgpattern>
+								<bgdisplaypolicy>2</bgdisplaypolicy>
+								<focusbehavior>3</focusbehavior>
+								<outlinecolor>1</outlinecolor>
+								<outlinestyle>4</outlinestyle>
+								<typeface>0</typeface>
+								<typesize>8</typesize>
+								<ismultiline>1</ismultiline>
+								<charsperline>5</charsperline>
+								<lines>1</lines>
+								<stringvalue>
+									<![CDATA[Three]]>
+								</stringvalue>
+							</row>
+							<row_class>formfield</row_class>
+						</childfields>
+						<separatorcolor>72</separatorcolor>
+						<separatorstyle>-1</separatorstyle>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>2</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[subform]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="subform" row="1" column="1">
+						<bgcolor>70</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>958</width>
+						<height>368</height>
+						<designbias>4</designbias>
+						<trimbias>8</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<gravity>17</gravity>
+						<bgpattern>-1</bgpattern>
+						<focusbehavior>1</focusbehavior>
+						<outlinecolor>87</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<outlinewidth>0</outlinewidth>
+						<isresizebounded>1</isresizebounded>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[tabfolder]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="tabfolder" row="1" column="1">
+						<bgcolor>70</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>972</width>
+						<height>785</height>
+						<designbias>4</designbias>
+						<trimbias>8</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<bgpattern>1</bgpattern>
+						<focusbehavior>1</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<isresizebounded>1</isresizebounded>
+						<tabbar>
+							<bgcolor>70</bgcolor>
+							<fgcolor>4</fgcolor>
+							<width>528</width>
+							<height>528</height>
+							<designbias>256</designbias>
+							<trimbias>8</trimbias>
+							<updatebias>16</updatebias>
+							<querybias>16</querybias>
+							<readbias>32</readbias>
+							<user1bias>16</user1bias>
+							<user2bias>16</user2bias>
+							<user3bias>16</user3bias>
+							<bgpattern>1</bgpattern>
+							<focusbehavior>1</focusbehavior>
+							<outlinecolor>83</outlinecolor>
+							<isresizebounded>1</isresizebounded>
+							<typeface>0</typeface>
+							<typesize>8</typesize>
+							<selectedtypeface>0</selectedtypeface>
+							<selectedtypesize>8</selectedtypesize>
+							<normaltabcolor>70</normaltabcolor>
+							<normaltextcolor>72</normaltextcolor>
+							<selectedtabcolor>70</selectedtabcolor>
+							<selectedtextcolor>72</selectedtextcolor>
+							<tabbgcolor>70</tabbgcolor>
+							<tabfieldarray>
+								<row>
+									<bgcolor>70</bgcolor>
+									<fgcolor>72</fgcolor>
+									<width>528</width>
+									<height>528</height>
+									<designbias>256</designbias>
+									<trimbias>256</trimbias>
+									<updatebias>16</updatebias>
+									<querybias>16</querybias>
+									<readbias>32</readbias>
+									<user1bias>16</user1bias>
+									<user2bias>16</user2bias>
+									<user3bias>16</user3bias>
+									<bgpattern>1</bgpattern>
+									<bgdisplaypolicy>2</bgdisplaypolicy>
+									<focusbehavior>2</focusbehavior>
+									<outlinecolor>1</outlinecolor>
+									<hastextlabel>1</hastextlabel>
+									<textlabel>Page1</textlabel>
+								</row>
+								<row>
+									<bgcolor>70</bgcolor>
+									<fgcolor>72</fgcolor>
+									<xleft>417</xleft>
+									<width>528</width>
+									<height>528</height>
+									<designbias>256</designbias>
+									<trimbias>256</trimbias>
+									<updatebias>16</updatebias>
+									<querybias>16</querybias>
+									<readbias>32</readbias>
+									<user1bias>16</user1bias>
+									<user2bias>16</user2bias>
+									<user3bias>16</user3bias>
+									<fieldstyle>0</fieldstyle>
+									<bgpattern>1</bgpattern>
+									<bgdisplaypolicy>2</bgdisplaypolicy>
+									<focusbehavior>2</focusbehavior>
+									<outlinecolor>1</outlinecolor>
+									<hastextlabel>1</hastextlabel>
+									<textlabel>Page 2</textlabel>
+								</row>
+								<row_class>tabfield</row_class>
+							</tabfieldarray>
+						</tabbar>
+						<tabpagearray>
+							<row>
+								<name>page1</name>
+								<bgcolor>70</bgcolor>
+								<fgcolor>72</fgcolor>
+								<ytop>208</ytop>
+								<width>965</width>
+								<height>569</height>
+								<designbias>256</designbias>
+								<trimbias>8</trimbias>
+								<updatebias>16</updatebias>
+								<querybias>16</querybias>
+								<readbias>32</readbias>
+								<user1bias>16</user1bias>
+								<user2bias>16</user2bias>
+								<user3bias>16</user3bias>
+								<fieldstyle>0</fieldstyle>
+								<bgpattern>1</bgpattern>
+								<focusbehavior>1</focusbehavior>
+								<outlinecolor>87</outlinecolor>
+								<isresizebounded>1</isresizebounded>
+								<delaymkwidget>1</delaymkwidget>
+							</row>
+							<row>
+								<name>page2</name>
+								<bgcolor>70</bgcolor>
+								<fgcolor>72</fgcolor>
+								<ytop>208</ytop>
+								<width>965</width>
+								<height>569</height>
+								<designbias>256</designbias>
+								<trimbias>8</trimbias>
+								<updatebias>16</updatebias>
+								<querybias>16</querybias>
+								<readbias>32</readbias>
+								<user1bias>16</user1bias>
+								<user2bias>16</user2bias>
+								<user3bias>16</user3bias>
+								<fieldstyle>0</fieldstyle>
+								<bgpattern>1</bgpattern>
+								<focusbehavior>1</focusbehavior>
+								<outlinecolor>87</outlinecolor>
+								<outlinewidth>0</outlinewidth>
+								<isresizebounded>1</isresizebounded>
+								<delaymkwidget>1</delaymkwidget>
+							</row>
+							<row_class>tabpage</row_class>
+						</tabpagearray>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[tablefield]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="tablefield" row="1" column="1">
+						<isarray>1</isarray>
+						<isnullable>1</isnullable>
+						<script>
+							<![CDATA[
+/*----------------------------------------------*/
+/* tablefield initialize */
+
+initialize =
+declare
+#   include _tfInitDecl
+enddeclare
+{
+#   include _tfInit
+}
+
+]]>
+						</script>
+						<bgcolor>70</bgcolor>
+						<fgcolor>1</fgcolor>
+						<xleft>292</xleft>
+						<ytop>49</ytop>
+						<width>826</width>
+						<height>882</height>
+						<designbias>4</designbias>
+						<trimbias>8</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<bgpattern>-1</bgpattern>
+						<focusbehavior>1</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<colseparatorwidth>0</colseparatorwidth>
+						<rowseparatorwidth>0</rowseparatorwidth>
+						<columnsdisplayed>1</columnsdisplayed>
+						<hasheaderbuttons>1</hasheaderbuttons>
+						<numvisiblerows>4</numvisiblerows>
+						<updateops>2</updateops>
+						<queryops>2</queryops>
+						<tablebody>
+							<bgcolor>70</bgcolor>
+							<fgcolor>1</fgcolor>
+							<ytop>174</ytop>
+							<width>667</width>
+							<height>708</height>
+							<designbias>2</designbias>
+							<trimbias>8</trimbias>
+							<updatebias>16</updatebias>
+							<querybias>16</querybias>
+							<readbias>16</readbias>
+							<user1bias>16</user1bias>
+							<user2bias>16</user2bias>
+							<user3bias>16</user3bias>
+							<bgpattern>1</bgpattern>
+							<focusbehavior>1</focusbehavior>
+							<outlinecolor>1</outlinecolor>
+							<outlinewidth>0</outlinewidth>
+							<childfields>
+								<row xsi:type="columnfield">
+									<name>ef1</name>
+									<bgcolor>2</bgcolor>
+									<fgcolor>1</fgcolor>
+									<width>667</width>
+									<height>708</height>
+									<designbias>4</designbias>
+									<trimbias>8</trimbias>
+									<updatebias>16</updatebias>
+									<querybias>16</querybias>
+									<readbias>32</readbias>
+									<user1bias>16</user1bias>
+									<user2bias>16</user2bias>
+									<user3bias>16</user3bias>
+									<fieldstyle>0</fieldstyle>
+									<bgpattern>1</bgpattern>
+									<focusbehavior>1</focusbehavior>
+									<outlinecolor>1</outlinecolor>
+									<outlinestyle>1</outlinestyle>
+									<outlinewidth>0</outlinewidth>
+									<separatorwidth>0</separatorwidth>
+									<protofield xsi:type="entryfield">
+										<name>ef1</name>
+										<datatype>varchar(100)</datatype>
+										<defaultvalue>1</defaultvalue>
+										<bgcolor>2</bgcolor>
+										<fgcolor>1</fgcolor>
+										<width>667</width>
+										<height>174</height>
+										<designbias>4</designbias>
+										<trimbias>256</trimbias>
+										<updatebias>16</updatebias>
+										<querybias>16</querybias>
+										<readbias>32</readbias>
+										<user1bias>16</user1bias>
+										<user2bias>16</user2bias>
+										<user3bias>16</user3bias>
+										<bgpattern>-1</bgpattern>
+										<bgdisplaypolicy>2</bgdisplaypolicy>
+										<focusbehavior>4</focusbehavior>
+										<outlinecolor>1</outlinecolor>
+										<outlinewidth>0</outlinewidth>
+										<typeface>0</typeface>
+										<typesize>8</typesize>
+										<charsperline>10</charsperline>
+										<lines>1</lines>
+									</protofield>
+								</row>
+								<row_class>formfield</row_class>
+							</childfields>
+							<orientation>2</orientation>
+							<separatorwidth>0</separatorwidth>
+						</tablebody>
+						<tableheader>
+							<bgcolor>70</bgcolor>
+							<fgcolor>1</fgcolor>
+							<width>667</width>
+							<height>174</height>
+							<designbias>2</designbias>
+							<trimbias>8</trimbias>
+							<updatebias>16</updatebias>
+							<querybias>16</querybias>
+							<readbias>32</readbias>
+							<user1bias>16</user1bias>
+							<user2bias>16</user2bias>
+							<user3bias>16</user3bias>
+							<fieldstyle>0</fieldstyle>
+							<bgpattern>1</bgpattern>
+							<focusbehavior>1</focusbehavior>
+							<outlinecolor>1</outlinecolor>
+							<outlinewidth>0</outlinewidth>
+							<childfields>
+								<row xsi:type="buttonfield">
+									<name>ef1_hdr</name>
+									<datatype>integer</datatype>
+									<bgcolor>70</bgcolor>
+									<fgcolor>1</fgcolor>
+									<width>625</width>
+									<height>132</height>
+									<designbias>4</designbias>
+									<trimbias>256</trimbias>
+									<updatebias>16</updatebias>
+									<querybias>16</querybias>
+									<readbias>32</readbias>
+									<user1bias>16</user1bias>
+									<user2bias>16</user2bias>
+									<user3bias>16</user3bias>
+									<requirerealfield>1</requirerealfield>
+									<fieldstyle>0</fieldstyle>
+									<bgpattern>1</bgpattern>
+									<bgdisplaypolicy>2</bgdisplaypolicy>
+									<focusbehavior>2</focusbehavior>
+									<outlinecolor>1</outlinecolor>
+									<outlinestyle>4</outlinestyle>
+									<typeface>0</typeface>
+									<typesize>8</typesize>
+									<textlabel>
+										<![CDATA[Ef1]]>
+									</textlabel>
+									<textalignment>1</textalignment>
+									<buttonstyle>3</buttonstyle>
+								</row>
+								<row_class>formfield</row_class>
+							</childfields>
+							<orientation>2</orientation>
+							<childgravity>10</childgravity>
+							<separatorwidth>0</separatorwidth>
+						</tableheader>
+					</row>
+					<row xsi:type="tablefield" row="2" column="1">
+						<isarray>1</isarray>
+						<isnullable>1</isnullable>
+						<script>
+							<![CDATA[
+/*----------------------------------------------*/
+/* tablefield initialize */
+
+initialize =
+declare
+#   include _tfInitDecl
+enddeclare
+{
+#   include _tfInit
+}
+
+]]>
+						</script>
+						<bgcolor>70</bgcolor>
+						<fgcolor>1</fgcolor>
+						<xleft>278</xleft>
+						<ytop>1090</ytop>
+						<width>910</width>
+						<height>1132</height>
+						<designbias>4</designbias>
+						<trimbias>8</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<fieldstyle>2</fieldstyle>
+						<bgpattern>-1</bgpattern>
+						<focusbehavior>1</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinewidth>0</outlinewidth>
+						<colseparatorwidth>0</colseparatorwidth>
+						<rowseparatorcolor>86</rowseparatorcolor>
+						<columnsdisplayed>1</columnsdisplayed>
+						<controlbutton>
+							<name>field15_controlbutton</name>
+							<bgcolor>70</bgcolor>
+							<fgcolor>1</fgcolor>
+							<xleft>743</xleft>
+							<ytop>201</ytop>
+							<width>132</width>
+							<height>132</height>
+							<designbias>2</designbias>
+							<trimbias>256</trimbias>
+							<updatebias>16</updatebias>
+							<querybias>16</querybias>
+							<readbias>32</readbias>
+							<user1bias>16</user1bias>
+							<user2bias>16</user2bias>
+							<user3bias>16</user3bias>
+							<fieldstyle>0</fieldstyle>
+							<bgpattern>-1</bgpattern>
+							<bgdisplaypolicy>2</bgdisplaypolicy>
+							<focusbehavior>1</focusbehavior>
+							<outlinecolor>1</outlinecolor>
+							<outlinestyle>1</outlinestyle>
+							<outlinewidth>7</outlinewidth>
+							<optionmenu>
+								<bgcolor>2</bgcolor>
+								<fgcolor>1</fgcolor>
+								<designbias>16384</designbias>
+								<trimbias>16384</trimbias>
+								<updatebias>16384</updatebias>
+								<querybias>16384</querybias>
+								<readbias>16384</readbias>
+								<user1bias>16384</user1bias>
+								<user2bias>16384</user2bias>
+								<user3bias>16384</user3bias>
+								<childmenufields>
+									<row xsi:type="menubutton">
+										<name>insertbefore</name>
+										<script>
+											<![CDATA[
+/*----------------------------------------------*/
+/* tablefield controlbutton menuitem Insert Before Current Row */
+
+on click =
+{
+#   include _tfcbInsClick
+}]]>
+										</script>
+										<bgcolor>2</bgcolor>
+										<fgcolor>1</fgcolor>
+										<designbias>16384</designbias>
+										<trimbias>16384</trimbias>
+										<updatebias>16384</updatebias>
+										<querybias>16384</querybias>
+										<readbias>16384</readbias>
+										<user1bias>16384</user1bias>
+										<user2bias>16384</user2bias>
+										<user3bias>16384</user3bias>
+										<focusbehavior>2</focusbehavior>
+										<textlabel>Insert Before Current Row</textlabel>
+										<speedkey>-13</speedkey>
+									</row>
+									<row xsi:type="menubutton">
+										<name>deletecurrent</name>
+										<script>
+											<![CDATA[
+/*----------------------------------------------*/
+/* tablefield controlbutton menuitem Delete Current Row */
+
+on click =
+{
+#   include _tfcbDelClick
+}]]>
+										</script>
+										<bgcolor>2</bgcolor>
+										<fgcolor>1</fgcolor>
+										<designbias>16384</designbias>
+										<trimbias>16384</trimbias>
+										<updatebias>16384</updatebias>
+										<querybias>16384</querybias>
+										<readbias>16384</readbias>
+										<user1bias>16384</user1bias>
+										<user2bias>16384</user2bias>
+										<user3bias>16384</user3bias>
+										<focusbehavior>1</focusbehavior>
+										<textlabel>Delete Current Row</textlabel>
+										<speedkey>-12</speedkey>
+									</row>
+									<row xsi:type="menubutton">
+										<name>deleteall</name>
+										<script>
+											<![CDATA[
+/*----------------------------------------------*/
+/* tablefield controlbutton menuitem Delete All Rows */
+
+on click =
+{
+#   include _tfcbDelAllClick
+}]]>
+										</script>
+										<bgcolor>2</bgcolor>
+										<fgcolor>1</fgcolor>
+										<designbias>16384</designbias>
+										<trimbias>16384</trimbias>
+										<updatebias>16384</updatebias>
+										<querybias>16384</querybias>
+										<readbias>16384</readbias>
+										<user1bias>16384</user1bias>
+										<user2bias>16384</user2bias>
+										<user3bias>16384</user3bias>
+										<focusbehavior>1</focusbehavior>
+										<textlabel>Delete All Rows</textlabel>
+									</row>
+									<row xsi:type="menubutton">
+										<name>copytable</name>
+										<script>
+											<![CDATA[
+/*----------------------------------------------*/
+/* tablefield controlbutton menuitem Copy Table */
+
+initialize =
+{
+#   include _tfcbCopyTableInit
+}
+
+on click =
+{
+#   include _tfcbCopyTableClick
+}]]>
+										</script>
+										<bgcolor>2</bgcolor>
+										<fgcolor>1</fgcolor>
+										<designbias>16384</designbias>
+										<trimbias>16384</trimbias>
+										<updatebias>16384</updatebias>
+										<querybias>16384</querybias>
+										<readbias>16384</readbias>
+										<user1bias>16384</user1bias>
+										<user2bias>16384</user2bias>
+										<user3bias>16384</user3bias>
+										<focusbehavior>1</focusbehavior>
+										<textlabel>Copy Table...</textlabel>
+									</row>
+									<row_class>menufield</row_class>
+								</childmenufields>
+							</optionmenu>
+							<popupalignment>0</popupalignment>
+						</controlbutton>
+						<numvisiblerows>4</numvisiblerows>
+						<updateops>2</updateops>
+						<queryops>2</queryops>
+						<tablebody>
+							<bgcolor>70</bgcolor>
+							<fgcolor>1</fgcolor>
+							<ytop>375</ytop>
+							<width>722</width>
+							<height>743</height>
+							<designbias>2</designbias>
+							<trimbias>8</trimbias>
+							<updatebias>16</updatebias>
+							<querybias>16</querybias>
+							<readbias>16</readbias>
+							<user1bias>16</user1bias>
+							<user2bias>16</user2bias>
+							<user3bias>16</user3bias>
+							<bgpattern>1</bgpattern>
+							<focusbehavior>1</focusbehavior>
+							<outlinecolor>1</outlinecolor>
+							<outlinewidth>1</outlinewidth>
+							<childfields>
+								<row xsi:type="columnfield">
+									<name>ef1</name>
+									<bgcolor>84</bgcolor>
+									<fgcolor>86</fgcolor>
+									<width>722</width>
+									<height>743</height>
+									<designbias>4</designbias>
+									<trimbias>8</trimbias>
+									<updatebias>16</updatebias>
+									<querybias>16</querybias>
+									<readbias>32</readbias>
+									<user1bias>16</user1bias>
+									<user2bias>16</user2bias>
+									<user3bias>16</user3bias>
+									<fieldstyle>0</fieldstyle>
+									<bgpattern>1</bgpattern>
+									<focusbehavior>1</focusbehavior>
+									<outlinecolor>1</outlinecolor>
+									<outlinestyle>1</outlinestyle>
+									<outlinewidth>0</outlinewidth>
+									<separatorcolor>86</separatorcolor>
+									<protofield xsi:type="entryfield">
+										<name>ef1</name>
+										<datatype>varchar(100)</datatype>
+										<defaultvalue>1</defaultvalue>
+										<bgcolor>84</bgcolor>
+										<fgcolor>86</fgcolor>
+										<width>722</width>
+										<height>174</height>
+										<designbias>4</designbias>
+										<trimbias>256</trimbias>
+										<updatebias>16</updatebias>
+										<querybias>16</querybias>
+										<readbias>32</readbias>
+										<user1bias>16</user1bias>
+										<user2bias>16</user2bias>
+										<user3bias>16</user3bias>
+										<fieldstyle>0</fieldstyle>
+										<bgpattern>-1</bgpattern>
+										<bgdisplaypolicy>2</bgdisplaypolicy>
+										<focusbehavior>4</focusbehavior>
+										<outlinecolor>1</outlinecolor>
+										<outlinewidth>0</outlinewidth>
+										<typeface>0</typeface>
+										<typesize>8</typesize>
+										<charsperline>11</charsperline>
+										<lines>1</lines>
+									</protofield>
+								</row>
+								<row_class>formfield</row_class>
+							</childfields>
+							<orientation>2</orientation>
+							<separatorwidth>0</separatorwidth>
+						</tablebody>
+						<tableheader>
+							<bgcolor>70</bgcolor>
+							<fgcolor>72</fgcolor>
+							<ytop>174</ytop>
+							<width>722</width>
+							<height>174</height>
+							<designbias>2</designbias>
+							<trimbias>8</trimbias>
+							<updatebias>16</updatebias>
+							<querybias>16</querybias>
+							<readbias>32</readbias>
+							<user1bias>16</user1bias>
+							<user2bias>16</user2bias>
+							<user3bias>16</user3bias>
+							<fieldstyle>0</fieldstyle>
+							<bgpattern>1</bgpattern>
+							<focusbehavior>1</focusbehavior>
+							<outlinecolor>1</outlinecolor>
+							<outlinewidth>1</outlinewidth>
+							<childfields>
+								<row xsi:type="freetrim">
+									<bgcolor>70</bgcolor>
+									<fgcolor>72</fgcolor>
+									<xleft>257</xleft>
+									<width>208</width>
+									<height>174</height>
+									<designbias>4</designbias>
+									<trimbias>16</trimbias>
+									<updatebias>256</updatebias>
+									<querybias>256</querybias>
+									<readbias>256</readbias>
+									<user1bias>256</user1bias>
+									<user2bias>256</user2bias>
+									<user3bias>256</user3bias>
+									<fieldstyle>0</fieldstyle>
+									<bgpattern>1</bgpattern>
+									<bgdisplaypolicy>2</bgdisplaypolicy>
+									<focusbehavior>3</focusbehavior>
+									<outlinecolor>1</outlinecolor>
+									<outlinewidth>0</outlinewidth>
+									<typeface>0</typeface>
+									<typesize>8</typesize>
+									<ismultiline>1</ismultiline>
+									<charsperline>3</charsperline>
+									<lines>1</lines>
+									<stringvalue>
+										<![CDATA[Ef1]]>
+									</stringvalue>
+								</row>
+								<row_class>formfield</row_class>
+							</childfields>
+							<orientation>2</orientation>
+							<childgravity>10</childgravity>
+							<separatorcolor>72</separatorcolor>
+							<separatorwidth>0</separatorwidth>
+						</tableheader>
+						<titletrim>
+							<bgcolor>70</bgcolor>
+							<fgcolor>72</fgcolor>
+							<xleft>83</xleft>
+							<width>583</width>
+							<height>174</height>
+							<designbias>4</designbias>
+							<trimbias>16</trimbias>
+							<updatebias>256</updatebias>
+							<querybias>256</querybias>
+							<readbias>256</readbias>
+							<user1bias>256</user1bias>
+							<user2bias>256</user2bias>
+							<user3bias>256</user3bias>
+							<fieldstyle>0</fieldstyle>
+							<bgpattern>1</bgpattern>
+							<bgdisplaypolicy>2</bgdisplaypolicy>
+							<focusbehavior>3</focusbehavior>
+							<outlinecolor>1</outlinecolor>
+							<typeface>0</typeface>
+							<typesize>8</typesize>
+							<ismultiline>1</ismultiline>
+							<charsperline>9</charsperline>
+							<lines>1</lines>
+							<stringvalue>
+								<![CDATA[Table Field]]>
+							</stringvalue>
+						</titletrim>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>2</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[togglefield]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="togglefield" row="1" column="1">
+						<datatype>integer</datatype>
+						<defaultvalue>3</defaultvalue>
+						<defaultstring>0</defaultstring>
+						<bgcolor>70</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>826</width>
+						<height>174</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<gravity>17</gravity>
+						<bgpattern>-1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<focusbehavior>2</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<typeface>0</typeface>
+						<typesize>8</typesize>
+						<textlabel>
+							<![CDATA[Toggle Item]]>
+						</textlabel>
+						<isautosized>1</isautosized>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[treeviewfield]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="treeviewfield" row="1" column="1">
+						<datatype>integer</datatype>
+						<defaultvalue>1</defaultvalue>
+						<bgcolor>2</bgcolor>
+						<fgcolor>1</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>1056</width>
+						<height>1069</height>
+						<designbias>4</designbias>
+						<trimbias>256</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<bgpattern>1</bgpattern>
+						<bgdisplaypolicy>2</bgdisplaypolicy>
+						<focusbehavior>4</focusbehavior>
+						<outlinecolor>1</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<typeface>0</typeface>
+						<typesize>8</typesize>
+						<hashorizontalscrollbar>1</hashorizontalscrollbar>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row xsi:type="matrixfield">
+				<bgcolor>2</bgcolor>
+				<fgcolor>1</fgcolor>
+				<clienttext>
+					<![CDATA[viewportfield]]>
+				</clienttext>
+				<width>10416</width>
+				<height>10417</height>
+				<designbias>2</designbias>
+				<trimbias>8</trimbias>
+				<updatebias>16</updatebias>
+				<querybias>16</querybias>
+				<readbias>32</readbias>
+				<user1bias>16</user1bias>
+				<user2bias>16</user2bias>
+				<user3bias>16</user3bias>
+				<fieldstyle>0</fieldstyle>
+				<bgpattern>1</bgpattern>
+				<focusbehavior>1</focusbehavior>
+				<outlinecolor>1</outlinecolor>
+				<childfields>
+					<row xsi:type="viewportfield" row="1" column="1">
+						<bgcolor>84</bgcolor>
+						<fgcolor>72</fgcolor>
+						<xleft>278</xleft>
+						<ytop>49</ytop>
+						<width>1007</width>
+						<height>708</height>
+						<designbias>4</designbias>
+						<trimbias>8</trimbias>
+						<updatebias>16</updatebias>
+						<querybias>16</querybias>
+						<readbias>32</readbias>
+						<user1bias>16</user1bias>
+						<user2bias>16</user2bias>
+						<user3bias>16</user3bias>
+						<gravity>17</gravity>
+						<bgpattern>-1</bgpattern>
+						<focusbehavior>1</focusbehavior>
+						<outlinecolor>87</outlinecolor>
+						<outlinestyle>4</outlinestyle>
+						<viewfield xsi:type="flexibleform">
+							<bgcolor>2</bgcolor>
+							<fgcolor>1</fgcolor>
+							<xleft>28</xleft>
+							<ytop>28</ytop>
+							<width>1000</width>
+							<height>1000</height>
+							<designbias>256</designbias>
+							<trimbias>8</trimbias>
+							<updatebias>16</updatebias>
+							<querybias>16</querybias>
+							<readbias>32</readbias>
+							<user1bias>16</user1bias>
+							<user2bias>16</user2bias>
+							<user3bias>16</user3bias>
+							<bgpattern>1</bgpattern>
+							<focusbehavior>1</focusbehavior>
+							<outlinecolor>1</outlinecolor>
+							<outlinewidth>0</outlinewidth>
+							<ismovebounded>0</ismovebounded>
+						</viewfield>
+					</row>
+				</childfields>
+				<columns>1</columns>
+				<rows>1</rows>
+			</row>
+			<row_class>formfield</row_class>
+		</fielddefaults>
+	</COMPONENT>
 	<COMPONENT name="WebView2VideoHTML_YouTube" xsi:type="framesource">
 		<script>
 			<![CDATA[initialize()=
@@ -13617,7 +16867,7 @@ declare
 	strHtml = stringobject;
 enddeclare
 {
-	// frame.flush() is mandatory to initialize subform correctly
+    // frame.flush() is mandatory to initialize subform correctly 
 	// during initialize() block before setting attribute WebPage.
 	curframe.flush();
 	FIELD(subform1).webpage = true;
@@ -16821,7 +20071,7 @@ on click =
 declare
 enddeclare
 {
-	// frame.flush() is mandatory to initialize subform correctly
+    // frame.flush() is mandatory to initialize subform correctly 
 	// during initialize() block before setting attribute WebPage.
 	curframe.flush();
 	FIELD(subform1).webpage = true;
@@ -20025,7 +23275,7 @@ on click =
 declare
 enddeclare
 {
-	// frame.flush() is mandatory to initialize subform correctly
+    // frame.flush() is mandatory to initialize subform correctly 
 	// during initialize() block before setting attribute WebPage.
 	curframe.flush();
 	FIELD(subform1).webpage = true;
