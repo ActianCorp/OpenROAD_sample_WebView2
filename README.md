@@ -39,6 +39,8 @@ NOTE makes use of Google Chart API, this could be reimplemented
 without internet access by using the same technique as the
 WebView2Demo_html_callback demo and local js.
 
+![](screenshots/WebView2Demo_QRcode.png)
+
 
 ### WebView2TwoViews
 
