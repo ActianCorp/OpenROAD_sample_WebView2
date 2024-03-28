@@ -11,20 +11,27 @@ scripts for import or simply document in readme?
 
 Finally squash merge branch to remove history.
 
-
+## Demos
 
 ### WebView2Demo
 
 Web browser demo; address bar and button implemented in OpenROAD 4gl with a fixed-sized WebView2.
+
+![](screenshots/WebView2Demo.png)
+
 
 ### WebView2Demo_html_callback
 
 Injects HTML into WebView2.
 Does NOT require internet access.
 
+
 ### WebView2Demo_PDF
 
 PDF viewer.
+
+![](screenshots/WebView2Demo_PDF.png)
+
 
 ### WebView2Demo_PDF_resize
 
@@ -60,3 +67,5 @@ URL loading a video from Actian Academy https://academy.actian.com/
 ### WebView2VideoURL_YouTube
 
 URL loading of a YouTube video, also see WebView2VideoHTML_YouTube.
+
+![](screenshots/WebView2VideoURL_actian.png)
